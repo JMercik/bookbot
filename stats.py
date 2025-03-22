@@ -14,3 +14,16 @@ def word_count():
         count += 1
     
     return count
+
+#use get_book_text to find the frequency of characters
+def character_frequency():
+    book_text = get_book_text().lower()
+    character_dictionary = {}
+    
+    for cha in book_text:
+        
+        if (cha in character_dictionary) == False:
+            character_dictionary[cha] = 0
+        character_dictionary[cha] += 1
+        
+    return character_dictionary
