@@ -1,14 +1,22 @@
 def main():
-    from stats import word_count
-    num_words = word_count()
-
-    from stats import character_frequency
+    from stats import (
+        word_count,
+        character_frequency,
+        sorted_cha,
+    )
     
-    from stats import sorted_cha
-    sorted_cha_list = sorted_cha()
+    def get_book_path(path):
+        with open(path) as f:
+            return f.read()
+
+    book_path = "books/frankenstein.txt"
+    text = get_book_path(book_path)
+    num_words = word_count(text)
+    sorted_cha_list = sorted_cha(text)
+
 
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {book_path}...")
     
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")

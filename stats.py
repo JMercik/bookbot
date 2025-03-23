@@ -5,8 +5,8 @@ def get_book_text():
     return text_contents
 
 #use get_book_text to count words
-def word_count():
-    book_text = get_book_text()
+def word_count(text):
+    book_text = text
     text_list = book_text.split()
     count = 0
 
@@ -16,8 +16,8 @@ def word_count():
     return count
 
 #use get_book_text to find the frequency of characters
-def character_frequency():
-    book_text = get_book_text().lower()
+def character_frequency(text):
+    book_text = text
     character_dictionary = {}
     
     for cha in book_text:
@@ -29,8 +29,8 @@ def character_frequency():
     return character_dictionary
 
 #create a book report from word_count and character_frequency
-def sorted_cha():
-    sorted_dict = character_frequency()
+def sorted_cha(text):
+    sorted_dict = character_frequency(text)
     list_sorted = []
     
     def sort_on(dict):
