@@ -27,3 +27,19 @@ def character_frequency():
         character_dictionary[cha] += 1
         
     return character_dictionary
+
+#create a book report from word_count and character_frequency
+def sorted_cha():
+    sorted_dict = character_frequency()
+    list_sorted = []
+    
+    def sort_on(dict):
+        return dict["num"]
+
+    for cha in sorted_dict:
+        if cha.isalpha() == True:
+            list_sorted.append({"cha": cha, "num": sorted_dict[cha]})
+    
+    list_sorted.sort(reverse=True, key=sort_on)
+
+    return list_sorted
