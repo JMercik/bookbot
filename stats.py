@@ -1,12 +1,12 @@
 #use title path to return full text
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
+def get_book_text(text_path):
+    with open(text_path) as f:
         text_contents = f.read()
     return text_contents
 
 #use get_book_text to count words
-def word_count():
-    book_text = get_book_text()
+def word_count(text_path):
+    book_text = get_book_text(text_path)
     text_list = book_text.split()
     count = 0
 
@@ -16,8 +16,8 @@ def word_count():
     return count
 
 #use get_book_text to find the frequency of characters
-def character_frequency():
-    book_text = get_book_text().lower()
+def character_frequency(text_path):
+    book_text = get_book_text(text_path).lower()
     character_dictionary = {}
     
     for cha in book_text:
@@ -29,8 +29,8 @@ def character_frequency():
     return character_dictionary
 
 #create a book report from word_count and character_frequency
-def sorted_cha():
-    sorted_dict = character_frequency()
+def sorted_cha(text_path):
+    sorted_dict = character_frequency(text_path)
     list_sorted = []
     
     def sort_on(dict):
