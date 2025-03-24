@@ -1,23 +1,15 @@
 def main():
-
-    import sys
     from stats import (
         word_count,
         character_frequency,
         sorted_cha,
     )
     
-    #check if file path was supplied to main
-    if len(sys.argv) != 2:
-        print("Usage: python3 main.py <path_to_book>")
-        sys.exit(1)
-    
-
     def get_book_path(path):
         with open(path) as f:
             return f.read()
 
-    book_path = sys.argv[1]
+    book_path = "books/frankenstein.txt"
     text = get_book_path(book_path)
     num_words = word_count(text)
     sorted_cha_list = sorted_cha(text)
